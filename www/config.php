@@ -280,7 +280,7 @@ $( document ).ready(function() {
 		url : "ajax/command.php",
 	   	type: "POST",
 	   	data : { 
-	   		code : "ssid2" 
+	   		code : "ssid" 
 	   	},
 	    success: function(data, textStatus, jqXHR) {
 	        //data - response from server

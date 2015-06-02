@@ -1,17 +1,5 @@
 <?php
 	if ($_REQUEST['code'] == "ssid") {
-		$output = shell_exec("sudo /var/www/sed.sh");
-		$tmp = explode(" ", $output);
-	
-		echo "<select name=\"r_ssid\" id=\"r_ssid\">";
-			echo "<option value=\"none\">Välj nät</option>";
-			foreach ($tmp as $value) {
-				$value = trim($value);
-				echo "<option value=\"$value\">$value</option>";
-	  		}
-		echo "</select>";
-	}
-	else if ($_REQUEST['code'] == "ssid2") {
 		$output = shell_exec("sudo iwlist wlan0 scan");
 		$array = explode("\n" ,$output);
 
@@ -51,12 +39,12 @@
 		echo "</div>";
 	}
 	else if ($_REQUEST['code'] == "active") {
-		$output[] = shell_exec("sudo cp -vr /var/www/PiTravel/conf/hostapd.conf /etc/hostapd");
-		$output[] = shell_exec("sudo cp -vr /var/www/PiTravel/conf/wpa.conf /etc");
-		$output[] = shell_exec("sudo cp -vr /var/www/PiTravel/conf/dnsmasq.conf /etc");
-		$output[] = shell_exec("sudo cp -vr /var/www/PiTravel/conf/hostapd /etc");
-		$output[] = shell_exec("sudo cp -vr /var/www/PiTravel/conf/interfaces /etc/network/interfaces");
-		$output[] = shell_exec("sudo cp -vr /var/www/PiTravel/conf/router.sh /etc/network/if-up.d");
+		$output[] = shell_exec("sudo cp -vr /etc/PiTravel/conf/hostapd.conf /etc/hostapd");
+		$output[] = shell_exec("sudo cp -vr /etc/PiTravel/conf/wpa.conf /etc");
+		$output[] = shell_exec("sudo cp -vr /etc/PiTravel/conf/dnsmasq.conf /etc");
+		$output[] = shell_exec("sudo cp -vr /etc/PiTravel/conf/hostapd /etc");
+		$output[] = shell_exec("sudo cp -vr /etc/PiTravel/conf/interfaces /etc/network/interfaces");
+		$output[] = shell_exec("sudo cp -vr /etc/PiTravel/conf/router.sh /etc/network/if-up.d");
 
 		print_r($output);	
 	}
