@@ -1,11 +1,10 @@
-
 {
     "ac_ssid": "PiTravel",
-    "ac_pass": "",
-    "ac_channel": "",
+    "ac_pass": "raspberry",
+    "ac_channel": "3",
     "ac_mode": "g",
     "ac_security": "2",
-    "ac_host": "false",
+    "ac_host": "true",
     "ac_hidden": "false",
     "router_ip": "10.10.10.1",
     "router_start": "10.10.10.10",
@@ -13,7 +12,7 @@
     "router_ip_leach": "12",
     "router_netmask": "255.255.255.0",
     "r_mode": "3",
-    "r_ssid": "",
+    "r_ssid": "none",
     "r_pass": "",
     "r_ssid_sec": "",
     "tor": "false",

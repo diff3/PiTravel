@@ -1,0 +1,16 @@
+#lo
+auto lo
+iface lo inet loopback
+
+#eth0
+iface eth0 inet dhcp
+
+#wlan0
+auto wlan0
+iface wlan0 inet dhcp
+wpa-conf /etc/wpa.conf
+
+#wlan1
+iface wlan1 inet static
+address 10.10.10.1
+netmask 255.255.255.0
